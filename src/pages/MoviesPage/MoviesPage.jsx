@@ -26,12 +26,10 @@ const MoviesPage = () => {
       <ul>
         {movies.length > 0 &&
           movies.map(movie => {
-            const { backdrop_path, original_title, id } = movie;
-            const image = `http://image.tmdb.org/t/p/w300/${backdrop_path}`;
+            const { original_title, id } = movie;
             return (
               <li key={id}>
                 <Link to={`${id}`} state={{ from: location }}>
-                  <img src={image} alt={original_title}></img>
                   <span>{original_title}</span>
                 </Link>
               </li>

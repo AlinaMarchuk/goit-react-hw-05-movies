@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import clsx from 'clsx';
 import css from './Layout.module.css';
 
 const Layout = () => {
@@ -7,10 +8,16 @@ const Layout = () => {
     <>
       <header className={css.header}>
         <nav className={css.nav}>
-          <NavLink to="/" className={css.link}>
+          <NavLink
+            to="/"
+            className={({ isActive }) => clsx(css.link, isActive && css.active)}
+          >
             Home
           </NavLink>
-          <NavLink to="/movies" className={css.link}>
+          <NavLink
+            to="/movies"
+            className={({ isActive }) => clsx(css.link, isActive && css.active)}
+          >
             Movies
           </NavLink>
         </nav>

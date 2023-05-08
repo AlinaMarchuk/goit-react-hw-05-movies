@@ -13,11 +13,5 @@
 
 .image {
   display: block;
-  flex-shrink: 1;
-  flex-basis: 380px;
-}
-
-.description {
-  flex-shrink: 2;
-  flex-basis: 900px;
+  width: 380px;
 }

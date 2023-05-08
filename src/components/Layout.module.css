@@ -39,7 +39,11 @@ ul {
 }
 
 .link:hover {
-  color: rgb(168, 35, 35);
+  color: rgb(229, 95, 23);
+}
+
+.active {
+  color: rgb(229, 95, 23);
 }
 
 .container {

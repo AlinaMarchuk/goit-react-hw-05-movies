@@ -18,7 +18,7 @@ const MovieDetailsPage = () => {
     poster_path,
   } = details;
 
-  const imageFilm = `http://image.tmdb.org/t/p/w300/${poster_path}`;
+  const imageFilm = `http://image.tmdb.org/t/p/w500/${poster_path}`;
   const yearRelease = new Date(release_date).getFullYear();
   const genresString = genres ? genres.map(genre => genre.name).join(' ') : '';
 
