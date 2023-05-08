@@ -1,5 +1,5 @@
 main {
-  font-size: 26px;
+  font-size: 22px;
 }
 
 .header {
@@ -7,14 +7,7 @@ main {
   left: 0;
   position: sticky;
   z-index: 1100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 64px;
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 16px 30px;
   font-size: 26px;
   color: #fff;
   background-color: #ffffff;
@@ -39,11 +32,11 @@ ul {
 }
 
 .link:hover {
-  color: rgb(229, 95, 23);
+  color: rgb(157, 32, 210);
 }
 
 .active {
-  color: rgb(229, 95, 23);
+  color: rgb(157, 32, 210);
 }
 
 .container {

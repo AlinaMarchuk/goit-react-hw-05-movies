@@ -2,6 +2,7 @@ import { useRef, Suspense } from 'react';
 import { Link, useLocation, Outlet } from 'react-router-dom';
 import { BsBoxArrowLeft } from 'react-icons/bs';
 import useMovieDetails from 'hooks/useMovieDetails';
+import defaultImg from '../../images/default_image.jpg';
 import css from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
@@ -18,7 +19,9 @@ const MovieDetailsPage = () => {
     poster_path,
   } = details;
 
-  const imageFilm = `http://image.tmdb.org/t/p/w500/${poster_path}`;
+  const imageFilm = poster_path
+    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+    : defaultImg;
   const yearRelease = new Date(release_date).getFullYear();
   const genresString = genres ? genres.map(genre => genre.name).join(' ') : '';
 
@@ -43,14 +46,17 @@ const MovieDetailsPage = () => {
           <p>{genresString}</p>
         </div>
       </div>
-      <ul>
-        <li key={1}>
-          <Link to="cast">Cast</Link>
-        </li>
-        <li key={2}>
-          <Link to="reviews">Reviews</Link>
-        </li>
-      </ul>
+      <div>
+        <h4>Additional information</h4>
+        <ul>
+          <li key={1}>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li key={2}>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
+      </div>
       <Suspense>
         <Outlet />
       </Suspense>
